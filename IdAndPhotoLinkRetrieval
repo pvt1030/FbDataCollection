@@ -27,7 +27,13 @@ def remake_data():
             if 'from' in x:
                 posted_by = x["from"]["name"]
 
-            photo_array.append(full_picture)
+            photo_details = {
+                "post_id": post_id,
+                "full_picture": full_picture,
+                "posted_by": posted_by,
+            }
+
+            photo_array.append(photo_details)
 
         retrieved_data = {
             "id": id_dict,
