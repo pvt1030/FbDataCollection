@@ -4,7 +4,7 @@ from termcolor import colored
 def get_db_data():
     connection = MongoClient('localhost', 27017)
     db = connection.user2
-    data = db.profile2
+    data = db.profilemod
     data_set = data.find()
     return data_set
 
@@ -15,7 +15,7 @@ def remake_data():
         id_dict = record['id']['id']
         name_dict = record['name']['name']
         posts = record["posts"]
-        posted_by = msg = des = nam = ' '
+        posted_by = msg = des = nam = date = ' '
         post_data = []
         for x in posts:
             post_id = x["id"]
@@ -27,13 +27,17 @@ def remake_data():
                 des = x["description"]
             if "name" in x:
                 nam = x["name"]
+            if "created_time" in x:
+                date = x["created_time"]
 
             post_details = {
                 "post_id": post_id,
                 "message": msg,
                 "description": des,
                 "name": nam,
-                "posted_by": posted_by
+                "posted_by": posted_by,
+                "date": date
+
             }
 
             post_data.append(post_details)
