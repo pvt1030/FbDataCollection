@@ -1,0 +1,49 @@
+import json
+import urllib
+import os
+
+
+
+def url_to_jpg(i, url, file_path):
+
+    filename = 'image-{}.jpg'.format(i)
+    full_path = '{}/{}'.format(file_path, filename)
+    print(full_path)
+    urllib.request.urlretrieve(url, full_path)
+
+    print('{} saved.'.format(filename))
+    return None
+
+# ---------------------------------------------
+
+
+
+fileName = 'IdAndPhotos.json'    # open file and read the content
+with open(fileName, 'r') as f:
+    data = json.loads("[" + f.read().replace("}\n{", "},\n{")+"]")
+    # print(data)
+
+for y in data:
+    id = y['id']
+    name = y['name']
+    urls = y['photos']
+    print(type(urls))
+
+    # base directory
+    basePath = 'imageDownloader/'
+    # create dynamic name
+    filePath = os.path.join(basePath, 'folder%s' % name )
+    # create 'dynamic' dir, if it does not exist
+    if not os.path.exists(filePath):
+        os.makedirs(filePath)
+    print(filePath)
+
+    for i, url in enumerate(urls):
+        if url != '':
+            print(i)
+            print(filePath)
+            url_to_jpg(i, url, filePath)
+
+
+
+
