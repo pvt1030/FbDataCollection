@@ -1,0 +1,42 @@
+_id,id,name,friends,groups,likes,photos,gender,no_of_languages,no_of_albums,no_of_favorite_teams,no_of_favorite_athletes,no_of_interested_music,birthday,quotes,no_of_posts,no_of_posts_with_description,no_of_posts_without_description,Openness,Conscientiousness,Extraversion,Agreeableness,Neuroticism
+"ObjectId(""5e4fe367c21ab88490a34dee"")",1.28E+15,Udeshika Madushani,1861,39,611,740,female,2,6,2,0,19,TRUE,FALSE,975,82,893,73,65,54,75,42
+"ObjectId(""5e4fe367c21ab88490a34df0"")",8.46E+14,Sithara Madhubhashini,916,16,50,511,female,1,4,0,0,0,TRUE,FALSE,638,50,588,54,35,62.5,65,46
+"ObjectId(""5e4fe367c21ab88490a34df2"")",1.26E+15,Meleeshiya Jayakody,1061,17,38,54,female,1,4,0,1,2,TRUE,FALSE,71,46,25,67,44,67,62.5,56
+"ObjectId(""5e4fe367c21ab88490a34df4"")",2.65E+15,Thathsarani Pathirana,1049,17,811,0,female,1,6,2,2,20,TRUE,FALSE,0,0,0,71,40,44,77,35
+"ObjectId(""5e4fe368c21ab88490a34df6"")",1.97E+15,Pavithra Madhubhashini,953,45,360,526,female,2,15,1,2,24,TRUE,TRUE,578,49,529,73,54,56,77,35
+"ObjectId(""5e4fe368c21ab88490a34df8"")",9.66E+14,Dewni Yasara Weththasinghe,1506,18,78,129,female,1,6,0,0,1,TRUE,FALSE,137,49,88,58,71,77,69,21
+"ObjectId(""5e4fe368c21ab88490a34dfa"")",1.47E+15,Jayani Jagoda,3901,0,201,324,female,2,4,1,0,5,TRUE,FALSE,362,97,265,67,85,65,75,35
+"ObjectId(""5e4fe368c21ab88490a34dfc"")",2.55E+15,Yashodha Ranawaka,739,22,1695,877,female,2,10,12,9,15,TRUE,TRUE,1045,571,474,75,31,79,60,48
+"ObjectId(""5e4fe368c21ab88490a34dfe"")",1.08E+15,Thushani Wickramasinghe,1133,15,484,36,female,1,2,1,0,3,TRUE,FALSE,37,3,34,68,44,29,71,60
+"ObjectId(""5e4fe368c21ab88490a34e00"")",2.34E+15,Thenuja Hansani,1720,46,207,585,female,1,17,3,2,8,TRUE,FALSE,715,248,467,75,71,60,56,54
+"ObjectId(""5e4fe368c21ab88490a34e02"")",1.83E+15,Sachini Piyumali,748,36,75,1917,female,1,7,18,56,16,TRUE,FALSE,2129,1083,1046,73,58,58,79,58
+"ObjectId(""5e4fe368c21ab88490a34e04"")",2.51E+15,Vishmantha Pb,1905,111,688,906,male,1,11,5,13,7,TRUE,FALSE,1319,920,399,81,52,58,52,62.5
+"ObjectId(""5e4fe368c21ab88490a34e06"")",1.08E+15,Udari Weerasinghe,1055,17,69,155,female,1,5,0,0,0,TRUE,FALSE,195,94,101,75,67,60,71,29
+"ObjectId(""5e4fe368c21ab88490a34e08"")",3.35E+15,Asitha Nanayakkara,2717,86,530,1176,male,1,6,13,10,2,TRUE,TRUE,1542,267,1275,65,65,58,58,52
+"ObjectId(""5e4fe368c21ab88490a34e0a"")",5.82E+14,Chalani Aththanayake,1418,12,52,241,female,1,5,0,0,0,TRUE,FALSE,347,53,294,56,67,58,56,50
+"ObjectId(""5e4fe368c21ab88490a34e0c"")",3.45E+15,Chiran Dharshana,1907,82,813,429,male,1,9,7,21,5,TRUE,FALSE,505,181,324,62.5,44,52,62.5,55
+"ObjectId(""5e4fe368c21ab88490a34e0e"")",8.85E+14,Maleesh Shanuka,64,2,3,12,male,1,3,0,0,0,TRUE,FALSE,13,0,13,73,58,58,60,37.5
+"ObjectId(""5e4fe368c21ab88490a34e10"")",2.05E+14,Nirosha Kumuduni,438,0,5,17,female,1,7,0,0,0,TRUE,FALSE,18,7,11,67,69,50,56,44
+"ObjectId(""5e4fe368c21ab88490a34e12"")",6.62E+14,Sujani Mirihagalla,890,22,69,501,female,1,6,1,2,3,TRUE,FALSE,621,345,276,79,67,75,62.5,46
+"ObjectId(""5e4fe368c21ab88490a34e14"")",2.06E+14,Nethra M Guruge,460,3,59,43,female,1,5,0,0,2,TRUE,FALSE,48,38,10,90,73,75,90,27
+"ObjectId(""5e4fe368c21ab88490a34e16"")",1.84E+14,Buddhika Jayawardane,550,5,93,65,male,1,13,3,3,0,TRUE,FALSE,82,17,65,65,58,52,67,29
+"ObjectId(""5e4fe368c21ab88490a34e18"")",8.85E+14,Sandali Tharuki,1691,50,768,965,female,1,7,5,3,7,TRUE,FALSE,1172,376,796,58,54,69,56,42
+"ObjectId(""5e4fe368c21ab88490a34e1a"")",6.56E+14,Kaveesha Gallage,229,36,407,24,female,1,2,2,5,4,TRUE,FALSE,31,0,31,73,60,54,77,73
+"ObjectId(""5e4fe368c21ab88490a34e1c"")",2.36E+15,Shakeer Akmal,1987,61,220,233,male,2,7,2,5,9,TRUE,FALSE,285,35,250,71,48,40,81,54
+"ObjectId(""5e4fe368c21ab88490a34e1e"")",3.41E+15,Sandun Isuru Niraj,1987,0,746,0,male,2,0,5,7,16,TRUE,TRUE,0,0,0,79,81,58,58,58
+"ObjectId(""5e4fe368c21ab88490a34e20"")",1.11E+15,Uthpala Hewage,386,14,59,61,female,1,6,0,0,0,TRUE,FALSE,62,19,43,67,73,62.5,65,40
+"ObjectId(""5e4fe368c21ab88490a34e22"")",2.29E+15,Kamitha Wedasinghe,2765,112,492,515,male,2,13,7,32,24,TRUE,FALSE,642,103,539,42,48,60,62.5,50
+"ObjectId(""5e4fe368c21ab88490a34e24"")",2.52E+15,Madushika Nadeeshan,756,30,149,120,male,1,6,0,0,2,TRUE,FALSE,138,4,134,56,50,54,52,46
+"ObjectId(""5e4fe368c21ab88490a34e26"")",1.41E+15,Thimán Krishly,3096,80,395,450,male,2,23,9,38,18,TRUE,TRUE,535,348,187,75,69,63,79,48
+"ObjectId(""5e4fe368c21ab88490a34e28"")",2.23E+15,Harshani Chathurika,2670,275,387,370,female,2,12,7,1,20,TRUE,FALSE,423,164,259,81,73,62.5,67,56
+"ObjectId(""5e4fe368c21ab88490a34e2a"")",2.46E+15,Ishani Rangana,1136,51,1768,321,female,1,12,12,33,17,TRUE,FALSE,359,123,236,81,77,35,81,25
+"ObjectId(""5e4fe368c21ab88490a34e2c"")",2.52E+15,Dilanka Tharindri,1073,24,300,250,female,1,10,7,0,3,TRUE,FALSE,288,101,187,69,54,50,90,42
+"ObjectId(""5e4fe368c21ab88490a34e2e"")",2.55E+15,Sammani Awarjana Dissanayake,2066,31,450,919,female,1,10,1,1,20,TRUE,FALSE,1274,652,622,83,81,50,96,48
+"ObjectId(""5e4fe368c21ab88490a34e30"")",1.08E+15,Hansani Wathsala,1028,18,262,50,female,1,4,3,0,7,TRUE,FALSE,51,7,44,56,58,67,69,56
+"ObjectId(""5e4fe368c21ab88490a34e32"")",2.52E+15,Harini Udara,828,31,284,76,female,1,5,0,1,5,TRUE,FALSE,86,25,61,58,50,31,67,62.5
+"ObjectId(""5e4fe368c21ab88490a34e34"")",2.64E+15,Nirma Nadeeshani,775,25,51,157,female,1,9,0,1,6,TRUE,FALSE,163,63,100,69,65,71,65,40
+"ObjectId(""5e4fe368c21ab88490a34e36"")",1.02E+16,Supuni Nuwanrasee Samaranayake,1159,35,414,659,female,1,6,0,1,2,TRUE,FALSE,880,615,265,79,67,54,71,33
+"ObjectId(""5e4fe368c21ab88490a34e38"")",1.06E+15,Muditha Charani Rathnasekara,627,39,278,172,female,1,5,3,1,2,TRUE,FALSE,182,48,134,67,58,65,58,52
+"ObjectId(""5e4fe368c21ab88490a34e3a"")",2.67E+15,Ranahansini Samarawickrama,518,18,60,97,female,2,17,1,1,1,TRUE,FALSE,98,33,65,58,73,73,67,10
+"ObjectId(""5e4fe369c21ab88490a34e3c"")",2.82E+15,Manthi Shamika,1140,27,356,193,female,1,13,0,3,18,TRUE,FALSE,199,37,162,87.5,52,58,81,35
+"ObjectId(""5e4fe369c21ab88490a34e3e"")",9.87E+14,Dilini Jayatissa,658,34,552,224,female,1,5,3,9,7,TRUE,TRUE,283,198,85,65,27,42,81,60
