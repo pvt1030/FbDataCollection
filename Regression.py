@@ -1,7 +1,8 @@
 import pandas as pd
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, r2_score
 from termcolor import colored
+import numpy as np
 
 # print the csv
 pd.set_option('display.max_columns', None)
@@ -46,11 +47,19 @@ def openness():
     openness_x = test_x[['likes', 'groups', 'no_of_posts', 'no_of_posts_with_description']]
     openness_pred = linear_regression.predict(openness_x)
     print(colored('Openness and likes,groups,no.of posts and no of posts with description', 'red'))
-    print(openness_pred)
+    # print(openness_pred)
 
-    print(colored('mean squared error', 'red'))
+    print(colored('mean squared error', 'green'))
     mse = mean_squared_error(actual_openness, openness_pred)
     print(mse)
+
+    # Root Mean Squared Deviation
+    rmsd = np.sqrt(mean_squared_error(actual_openness, openness_pred))
+    r2_value = r2_score(actual_openness, openness_pred)
+    print(colored('Root Mean Square Error', 'green'))
+    print(rmsd)
+    print(colored('R^2 Value:', 'green'))
+    print(r2_value)
 
     df = pd.DataFrame({'Actual': actual_openness, 'Predicted': openness_pred})
     print(df.head(20))
@@ -64,11 +73,19 @@ def conscientiousness():
 
     conscientiosness_pred = linear_regression.predict(conscientiousness_x)
     print(colored('conscientiosness and likes,groups,no.of posts and no of posts with description', 'red'))
-    print(conscientiosness_pred)
+    # print(conscientiosness_pred)
 
-    print(colored('mean squared error', 'red'))
+    print(colored('mean squared error', 'green'))
     mse = mean_squared_error(actual_con, conscientiosness_pred)
     print(mse)
+
+    # Root Mean Squared Deviation
+    rmsd = np.sqrt(mean_squared_error(actual_con, conscientiosness_pred))
+    r2_value = r2_score(actual_con, conscientiosness_pred)
+    print(colored('Root Mean Square Error', 'green'))
+    print(rmsd)
+    print(colored('R^2 Value:', 'green'))
+    print(r2_value)
 
     df = pd.DataFrame({'Actual': actual_con, 'Predicted': conscientiosness_pred})
     print(df.head(20))
@@ -82,11 +99,19 @@ def extraversion():
 
     extraversion_pred = linear_regression.predict(extraversion_x)
     print(colored('Extraversion and likes,groups,no.of posts and no of posts with description', 'red'))
-    print(extraversion_pred)
+    # print(extraversion_pred)
 
-    print(colored('mean squared error', 'red'))
+    print(colored('mean squared error', 'green'))
     mse = mean_squared_error(actual_Extraversion, extraversion_pred)
     print(mse)
+
+    # Root Mean Squared Deviation
+    rmsd = np.sqrt(mean_squared_error(actual_Extraversion, extraversion_pred))
+    r2_value = r2_score(actual_Extraversion, extraversion_pred)
+    print(colored('Root Mean Square Error', 'green'))
+    print(rmsd)
+    print(colored('R^2 Value:', 'green'))
+    print(r2_value)
 
     df = pd.DataFrame({'Actual': actual_Extraversion, 'Predicted': extraversion_pred})
     print(df.head(20))
@@ -100,11 +125,19 @@ def aggreeableness():
 
     agreeableness_pred = linear_regression.predict(aggreeableness_x)
     print(colored('Agreeableness and likes,groups,no.of posts and no of posts with description', 'red'))
-    print(agreeableness_pred)
+    # print(agreeableness_pred)
 
-    print(colored('mean squared error', 'red'))
+    print(colored('mean squared error', 'green'))
     mse = mean_squared_error(actual_Agreeableness, agreeableness_pred)
     print(mse)
+
+    # Root Mean Squared Deviation
+    rmsd = np.sqrt(mean_squared_error(actual_Agreeableness, agreeableness_pred))
+    r2_value = r2_score(actual_Agreeableness, agreeableness_pred)
+    print(colored('Root Mean Square Error ', 'green'))
+    print(rmsd)
+    print(colored('R^2 Value:', 'green'))
+    print(r2_value)
 
     df = pd.DataFrame({'Actual': actual_Agreeableness, 'Predicted': agreeableness_pred})
     print(df.head(20))
@@ -118,11 +151,19 @@ def neuroticism():
 
     neuroticism_pred = linear_regression.predict(neuroticism_x)
     print(colored('Neuroticism and likes,groups,no.of posts and no of posts with description', 'red'))
-    print(neuroticism_pred)
+    # print(neuroticism_pred)
 
-    print(colored('mean squared error', 'red'))
+    print(colored('mean squared error', 'green'))
     mse = mean_squared_error(actual_Neuroticism, neuroticism_pred)
     print(mse)
+
+    # Root Mean Squared Deviation
+    rmsd = np.sqrt(mean_squared_error(actual_Neuroticism, neuroticism_pred))
+    r2_value = r2_score(actual_Neuroticism, neuroticism_pred)
+    print(colored('Root Mean Square Error', 'green'))
+    print(rmsd)
+    print(colored('R^2 Value:', 'green'))
+    print(r2_value)
 
     df = pd.DataFrame({'Actual': actual_Neuroticism, 'Predicted': neuroticism_pred})
     print(df.head(20))
