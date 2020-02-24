@@ -1,0 +1,60 @@
+import pandas as pd
+from sklearn import preprocessing
+from termcolor import colored
+import numpy as np
+
+
+data = pd.read_csv('modified_with_sentiments_version2.csv')
+pd.set_option('display.max_columns', None)
+
+# Handling missing values
+data = data.fillna(0)
+# data = data.mask(data == 0).fillna(data.mean())
+data.replace(0, data.mean(axis=0), inplace=True)
+# print(data.isnull().sum(axis=0))
+# print(data.describe())
+
+#dropping columns
+total_dataset = data.drop(['_id', 'gender', 'quotes', 'birthday', 'name'], axis=1)
+print(colored('Total Dataset', 'red'))
+# print(total_dataset.head())
+
+
+
+# Normalization
+def normalize(posts):
+    print(posts.head())
+    float_col = posts.select_dtypes(include=['float64'])
+
+    # covert users data to int data type,cz float values generate error cannot contain data as float(size issue)
+    for col in float_col.columns.values:
+        posts[col] = posts[col].astype('int64')
+        # print(num_users.info())
+
+    # convert data to array
+    posts_array = np.array(posts)
+    print(colored('posts_array', 'yellow'))
+    print(posts_array)
+
+    # has to pass data as array
+    data = preprocessing.normalize(posts_array)
+    print(data)
+    print(type(data))
+    
+    dataset = pd.DataFrame({'id': data[:, 0], 'friends': data[:, 1], 'groups': data[:, 2], 'likes': data[:, 3],
+                               'photos': data[:, 4], 'no_of_languages': data[:, 5], ' no_of_albums': data[:, 6],
+                               'no_of_favorite_teams': data[:, 7], 'no_of_favorite_athletes': data[:, 8],
+                               'no_of_interested_music': data[:, 9], 'no_of_posts': data[:, 10],
+                               'no_of_posts_with_description': data[:, 11], 'no_of_posts_without_description': data[:, 12],
+                               'Openness': data[:, 13], 'Conscientiousness': data[:, 14], 'Extraversion': data[:, 15],
+                               'Agreeableness': data[:, 16], 'Neuroticism': data[:, 17], 'first_pro_per': data[:, 18],
+                               'second_pro_per': data[:, 19], 'third_pro_per': data[:, 20], 'word_len_per': data[:, 21],
+                               'angry_perc': data[:, 22], 'anticipation_perc': data[:, 23], 'disgust_perc': data[:, 24],
+                               'fear_perc': data[:, 25], 'joy_perc': data[:, 26], 'negative_perc': data[:, 27],
+                               'positive_perc': data[:, 28],'sadness_perc': data[:, 29], 'surprise_perc': data[:, 30],
+                               'trust_perc': data[:, 31]})
+    print(dataset)
+    return dataset
+
+print(data.info())
+normalize(total_dataset)
