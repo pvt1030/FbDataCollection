@@ -1,0 +1,61 @@
+import pandas as pd
+import statsmodels.api as sm
+from termcolor import colored
+
+
+data = pd.read_csv('TotalDataSet.csv')
+normalized_dataset = pd.read_csv('normalized.csv')
+normalized_data = normalized_dataset.drop(['Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Neuroticism' ], axis=1)
+pd.set_option('display.max_columns', None)
+print('Normalized dataset', normalized_dataset)
+
+# Target features
+openness = normalized_dataset['Openness']
+conscientiousness = normalized_dataset['Conscientiousness']
+extraversion = normalized_dataset['Extraversion']
+agreeableness = normalized_dataset['Agreeableness']
+neuroticism = normalized_dataset['Neuroticism']
+
+# feature matrix
+X = data.drop(['name', '_id', 'id', 'gender', 'quotes', 'birthday', 'Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Neuroticism'], axis=1)
+normalized_X = data.drop(['id'], axis=1)
+
+# feature selection -> wrapper_method -> forward selection technique
+
+
+def forward_selection(x, y, significance_level=0.05):
+    initial_features = x.columns.tolist()
+    best_features = []
+    while len(list(initial_features)) > 0:
+        remaining_features = list(set(initial_features)-set(best_features))
+        new_pval = pd.Series(index=remaining_features)
+        for new_column in remaining_features:
+            model = sm.OLS(y, sm.add_constant(normalized_data[best_features+[new_column]])).fit()
+            new_pval[new_column] = model.pvalues[new_column]
+        min_p_value = new_pval.min()
+        if min_p_value < significance_level:
+            best_features.append(new_pval.idxmin())
+        else:
+            break
+    return best_features
+
+
+feature_set_openness = forward_selection(normalized_data, openness, 0.05)
+print(colored('Openness feature matrix', 'blue'))
+print(feature_set_openness)
+
+feature_set_conscientiousness = forward_selection(normalized_data, conscientiousness, 0.05)
+print(colored('Conscientiousness feature matrix', 'blue'))
+print(feature_set_conscientiousness)
+
+feature_set_extraversion = forward_selection(normalized_data, extraversion, 0.05)
+print(colored('Extraversion feature matrix', 'blue'))
+print(feature_set_extraversion)
+
+feature_set_agreeableness = forward_selection(normalized_data, agreeableness, 0.05)
+print(colored('agreeableness feature matrix', 'blue'))
+print(feature_set_agreeableness)
+
+feature_set_neuroticism= forward_selection(normalized_data, neuroticism, 0.05)
+print(colored('neuroticism feature matrix', 'blue'))
+print(feature_set_neuroticism)
