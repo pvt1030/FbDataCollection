@@ -1,0 +1,71 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+csv = pd.read_csv('normalized.csv')
+openness = csv[['word_len_per', 'no_of_languages', 'fear_perc', 'angry_perc', 'disgust_perc', 'second_pro_per', 'trust_perc', 'surprise_perc', 'positive_perc', 'negative_perc', 'third_pro_per']]
+
+conscientiousness = csv[['no_of_languages', 'word_len_per', 'fear_perc', 'angry_perc', 'disgust_perc', 'surprise_perc', 'second_pro_per', 'negative_perc', 'trust_perc', 'first_pro_per', 'likes', 'friends']]
+extraversion = csv[['word_len_per', 'angry_perc', 'no_of_languages', 'fear_perc', 'disgust_perc', 'second_pro_per', 'third_pro_per', 'trust_perc', 'sadness_perc', 'likes', 'anticipation_perc', 'surprise_perc', 'joy_perc', 'negative_perc']]
+agreeableness = csv[['word_len_per', 'angry_perc', 'no_of_languages', 'fear_perc', 'disgust_perc', 'third_pro_per', 'second_pro_per', 'sadness_perc', 'trust_perc', 'anticipation_perc', 'negative_perc', 'no_of_posts', 'no_of_favorite_athletes', 'joy_perc', 'surprise_perc']]
+neuroticism = csv[['positive_perc', 'disgust_perc', 'third_pro_per', 'negative_perc', 'angry_perc', 'no_of_languages', 'groups', 'word_len_per', 'anticipation_perc', ' no_of_albums', 'joy_perc']]
+
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.heatmap(openness.corr(), center=0, cmap='Blues')
+ax.set_title('Multi-Collinearity of openness Attributes')
+
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.heatmap(openness.corr(), center=0, cmap='BrBG', annot=True)
+ax.set_title('Multi-Collinearity of openness Attributes')
+plt.show()
+
+# ----------------------------------------------
+
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.heatmap(conscientiousness.corr(), center=0, cmap='Blues')
+ax.set_title('Multi-Collinearity of conscientiousness Attributes')
+
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.heatmap(conscientiousness.corr(), center=0, cmap='BrBG', annot=True)
+ax.set_title('Multi-Collinearity of conscientiousness Attributes')
+plt.show()
+
+#   ---------------------------------------------------
+
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.heatmap(extraversion.corr(), center=0, cmap='Blues')
+ax.set_title('Multi-Collinearity of extraversion Attributes')
+
+fig, ax = plt.subplots(figsize=(10,6))
+sns.heatmap(extraversion.corr(), center=0, cmap='BrBG', annot=True)
+ax.set_title('Multi-Collinearity of extraversion Attributes')
+plt.show()
+
+#   ---------------------------------------------------
+
+
+fig, ax = plt.subplots(figsize=(10,6))
+sns.heatmap(agreeableness.corr(), center=0, cmap='Blues')
+ax.set_title('Multi-Collinearity of agreeableness Attributes')
+
+fig, ax = plt.subplots(figsize=(10,6))
+sns.heatmap(agreeableness.corr(), center=0, cmap='BrBG', annot=True)
+ax.set_title('Multi-Collinearity of agreeableness Attributes')
+plt.show()
+
+#   ---------------------------------------------------
+
+
+fig, ax = plt.subplots(figsize=(10,6))
+sns.heatmap(neuroticism.corr(), center=0, cmap='Blues')
+ax.set_title('Multi-Collinearity of neuroticism Attributes')
+
+fig, ax = plt.subplots(figsize=(10,6))
+sns.heatmap(neuroticism.corr(), center=0, cmap='BrBG', annot=True)
+ax.set_title('Multi-Collinearity of neuroticism Attributes')
+plt.show()
+
+
+#   ---------------------------------------------------
+

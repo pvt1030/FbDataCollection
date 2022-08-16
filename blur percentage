@@ -1,0 +1,71 @@
+# import the necessary packages
+import os
+import cv2
+from termcolor import colored
+import imutils
+from imutils import build_montages
+from imutils import paths
+import numpy as np
+from pathlib import Path
+
+
+# Blur detection with OpenCV
+def variance_of_laplacian(image):
+    #   compute the Laplacian of the image and then return the focus
+    #   measure, which is simply the variance of the Laplacian
+    return cv2.Laplacian(image, cv2.CV_64F).var()
+
+
+def blur_percentage():
+
+    images = []
+    path = "J:/UOM/Education/sample/facebook/FbDataCollection/DatasetCreation/ProfilePicDownloader/withId"
+
+    for filename in os.listdir(path):   # read image files in folder one by one
+        img = cv2.imread(os.path.join(path, filename))  # read image file
+        # cv2.imshow("Image", img)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # convert it to grayscale
+        fm = variance_of_laplacian(gray)  # compute the focus measure of the image using the Variance of Laplacianmethod
+        print(colored(filename, 'red'), fm)
+        if img is not None:
+            images.append(img)
+    # show the image
+    #   cv2.putText(image, "{}: {:.2f}".format(text, fm), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 3)
+    #   cv2.imshow("Image", image)
+    #   key = cv2.waitKey(0)
+
+    # print(len(images))
+    return images
+
+
+def colorfulness():
+    images = []
+    path = "J:/UOM/Education/sample/facebook/FbDataCollection/DatasetCreation/ProfilePicDownloader/withId"
+
+    for filename in os.listdir(path):
+        image = cv2.imread(os.path.join(path, filename))
+        # split the image into its respective RGB components
+        (B, G, R) = cv2.split(image.astype("float"))
+
+        # compute rg = R - G , red green opponent
+        rg = np.absolute(R - G)
+
+        # compute yb = 0.5 * (R + G) - B , yellow blue opponent
+        yb = np.absolute(0.5 * (R + G) - B)
+
+        # compute the mean and standard deviation of both `rg` and `yb`
+        (rbMean, rbStd) = (np.mean(rg), np.std(rg))
+        (ybMean, ybStd) = (np.mean(yb), np.std(yb))
+
+        # combine the mean and standard deviations
+        stdRoot = np.sqrt((rbStd ** 2) + (ybStd ** 2))
+        meanRoot = np.sqrt((rbMean ** 2) + (ybMean ** 2))
+
+        # derive the "colorfulness" metric and return it
+        colorfulness_metric = stdRoot + (0.3 * meanRoot)
+        print(colored(filename, 'yellow'), colorfulness_metric)
+    return images
+
+
+# blur_percentage()
+colorfulness()
